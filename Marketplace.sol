@@ -55,10 +55,43 @@ pragma solidity >=0.7.0 < 0.9.0;
                 }
         }
         
-        function readProduct(uint  _index) public view returns (Product memory) {
-               
-                
+        //Function that reads and displays the products
+        function displayProducts() public view returns (
+            string memory _name,
+            string memory _image,
+            string memory _description,
+            string memory _location,
+            uint _price,
+            uint _sold
+            ) {
+            for (uint i = 0; i< products.length; i++) {
+                Product memory _product = productM[i];
+                return (_product.name, _product.image,_product.description, _product.location, _product.price, _product.sold);
+            }
+           
         }
+
+        //Function that displays only one product when its index is passed as the parameter
+         function viewProduct(uint _index) public view returns (
+            string memory _name,
+            string memory _image,
+            string memory _description,
+            string memory _location,
+            uint _price,
+            uint _sold
+            ) {
+                Product memory _product = productM[_index];
+                return (
+                    _product.name,
+                    _product.image,
+                    _product.description,
+                    _product.location,
+                    _product.price,
+                    _product.sold
+                );
+        }    
+                
+        
         
         
         function buyProduct(uint _index) public payable {
