@@ -64,7 +64,7 @@ pragma solidity >=0.7.0 < 0.9.0;
             uint _price,
             uint _sold
             ) {
-            for (uint i = 0; i< products.length; i++) {
+           // for (uint i = 0; i< products.length; i++) {
                 Product memory _product = productM[i];
                 return (_product.name, _product.image,_product.description, _product.location, _product.price, _product.sold);
             }
